@@ -106,6 +106,7 @@ web后台管理：
 ![运行结果1](https://github.com/zchengo/imall/blob/main/demo/result/web.jpg)
 
 小程序商城：
+
 ![运行结果2](https://github.com/zchengo/imall/blob/main/demo/result/app.jpg)
 
 ### 使用说明
