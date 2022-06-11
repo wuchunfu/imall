@@ -101,7 +101,7 @@ $ npm install
 
 **预览**
 
-web后台管理：
+商家后台管理：
 
 ![运行结果1](https://github.com/zchengo/imall/blob/main/demo/result/web.jpg)
 
