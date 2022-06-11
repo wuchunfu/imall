@@ -100,10 +100,12 @@ $ npm install
 
 **预览**
 
-web后台管理员前端：
+web后台管理：
 
-![运行结果1](https://github.com/zchengo/imall/blob/main/demo/result/web.png?raw=true)
-![运行结果2](https://github.com/zchengo/imall/blob/main/demo/result/app.png?raw=true)
+![运行结果1](https://github.com/zchengo/imall/blob/main/demo/result/app.jpg)
+
+小程序商城：
+![运行结果2](https://github.com/zchengo/imall/blob/main/demo/result/web.jpg)
 
 ### 使用说明
 
