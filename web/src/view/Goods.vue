@@ -65,7 +65,16 @@
           </el-button>
           <el-button v-if="scope.row.status === 1" size="small" type="primary" @click="changeStatus(2,scope.row)">下架
           </el-button>
-          <el-button size="small" type="danger" :icon="Delete" @click="deleteGoods(scope.$index, scope.row)"/>
+          <el-popconfirm title="此操作将永久删除该信息, 是否继续?"
+                         confirmButtonText="确认"
+                         cancelButtonText="取消"
+                         cancelButtonType="default"
+                         :icon="WarningFilled"
+                         @confirm="deleteGoods(scope.row)">
+            <template #reference>
+             <el-button size="small" type="danger" :icon="Delete"/>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
@@ -135,15 +144,15 @@
 </template>
 
 <script>
-import {ArrowDown, ArrowUp, Brush, Delete, Edit, Plus, Search, Timer} from "@element-plus/icons-vue";
-import {ElMessage, ElMessageBox} from 'element-plus'
+import {ArrowDown, ArrowUp, Brush, Delete, Edit, Plus, Search, Timer, WarningFilled} from "@element-plus/icons-vue";
+import {ElMessage} from 'element-plus'
 import Container from "../components/Container";
 
 export default {
   name: "Goods",
   components: {Container, Timer,},
   setup() {
-    return {Search, Brush, Plus, Edit, ArrowUp, ArrowDown, Delete}
+    return {Search, Brush, Plus, Edit, ArrowUp, ArrowDown, Delete, WarningFilled}
   },
   data() {
     return {
@@ -331,14 +340,8 @@ export default {
     },
 
     // 删除商品
-    deleteGoods(index, row) {
-      ElMessageBox.confirm('此操作将永久删除该信息, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-          }
-      ).then(() => {
-        this.$axios.delete('/goods/delete', {
+    deleteGoods(row) {
+      this.$axios.delete('/goods/delete', {
           params: {
             id: row.id
           }
@@ -349,9 +352,6 @@ export default {
           this.getGoodsList()
         }).catch((error) => {
           console.log(error)
-        })
-      }).catch(() => {
-        ElMessage({type: 'info', message: '取消删除'})
       })
     },
 

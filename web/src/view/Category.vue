@@ -21,7 +21,16 @@
           <el-button size="small" type="primary" :icon="Edit" @click="editLv1Category(scope.row)"/>
           <el-button size="small" type="primary" :icon="Plus" @click="addLv2Category(scope.row)"/>
           <el-button size="small" type="primary" @click="checkLv2Category(scope.row)">查看二级类目</el-button>
-          <el-button size="small" type="danger" :icon="Delete" @click="deleteCategory(scope.row)"/>
+          <el-popconfirm title="此操作将永久删除该信息, 是否继续?"
+                         confirmButtonText="确认"
+                         cancelButtonText="取消"
+                         cancelButtonType="default"
+                         :icon="WarningFilled"
+                         @confirm="deleteCategory(scope.row)">
+            <template #reference>
+             <el-button size="small" type="danger" :icon="Delete"/>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
@@ -52,7 +61,16 @@
         <el-table-column label="操作" min-width="130">
           <template #default="scope">
             <el-button size="small" type="primary" :icon="Edit" @click="editLv2Category(scope.row)"/>
-            <el-button size="small" type="danger" :icon="Delete" @click="deleteCategory(scope.row)"/>
+            <el-popconfirm title="此操作将永久删除该信息, 是否继续?"
+                         confirmButtonText="确认"
+                         cancelButtonText="取消"
+                         cancelButtonType="default"
+                         :icon="WarningFilled"
+                         @confirm="deleteCategory(scope.row)">
+            <template #reference>
+             <el-button size="small" type="danger" :icon="Delete"/>
+            </template>
+          </el-popconfirm>
           </template>
         </el-table-column>
       </el-table>
@@ -62,14 +80,14 @@
 
 <script>
 import Container from "../components/Container";
-import {Delete, Edit, Plus, Search} from "@element-plus/icons-vue";
-import {ElMessage, ElMessageBox} from "element-plus";
+import {Delete, Edit, Plus, Search, WarningFilled} from "@element-plus/icons-vue";
+import {ElMessage} from "element-plus";
 
 export default {
   name: "Category",
   components: {Container},
   setup() {
-    return {Search, Plus, Edit, Delete}
+    return {Search, Plus, Edit, Delete, WarningFilled}
   },
   data() {
     return {
@@ -194,13 +212,7 @@ export default {
       this.checkLv2CategoryDialogVisible = false
     },
     deleteCategory(row){
-      ElMessageBox.confirm('此操作将永久删除该信息, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-          }
-      ).then(() => {
-        this.$axios.delete('/category/delete', {
+      this.$axios.delete('/category/delete', {
           params: {
             id: row.id
           }
@@ -211,9 +223,6 @@ export default {
           this.getCategoryList(1)
         }).catch((error) => {
           console.log(error)
-        })
-      }).catch(() => {
-        ElMessage({type: 'info', message: '取消删除'})
       })
     },
     cancelCategory(){

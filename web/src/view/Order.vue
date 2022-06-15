@@ -47,7 +47,17 @@
         <template #default="scope">
           <el-button size="small" @click="checkOrder(scope.$index, scope.row)">详情</el-button>
           <el-button v-if="scope.row.status === 3" size="small" type="primary" @click="modifyOrder(scope.row, 4)">配送</el-button>
-          <el-button v-if="scope.row.status === 2 || scope.row.status === 5" size="small" type="danger" @click="deleteOrder(scope.row)">删除</el-button>
+          <el-popconfirm title="此操作将永久删除该信息, 是否继续?"
+                         confirmButtonText="确认"
+                         cancelButtonText="取消"
+                         cancelButtonType="default"
+                         v-if="scope.row.status === 2 || scope.row.status === 5"
+                         :icon="WarningFilled"
+                         @confirm="deleteOrder(scope.row)">
+            <template #reference>
+             <el-button size="small" type="danger">删除</el-button>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
@@ -105,15 +115,15 @@
 
 <script>
 import Container from "../components/Container";
-import {Brush, Delete, Search, Setting, Timer} from "@element-plus/icons-vue";
-import {ElMessage, ElMessageBox} from "element-plus";
+import {Brush, Delete, Search, Setting, Timer, WarningFilled} from "@element-plus/icons-vue";
+import {ElMessage} from "element-plus";
 import Descriptions from "@/components/Descriptions";
 
 export default {
   name: "Order",
   components: {Descriptions, Container, Timer},
   setup() {
-    return {Search, Brush, Setting, Delete}
+    return {Search, Brush, Setting, Delete, WarningFilled}
   },
   data() {
     return {
@@ -235,12 +245,7 @@ export default {
 
     // 删除订单
     deleteOrder(row){
-      ElMessageBox.confirm('此操作将永久删除该信息, 是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        this.$axios.delete('/order/delete', {
+      this.$axios.delete('/order/delete', {
           params: {
             id: row.id
           }
@@ -251,9 +256,6 @@ export default {
           this.getOrderList()
         }).catch((error) => {
           console.log(error)
-        })
-      }).catch(() => {
-        ElMessage({type: 'info', message: '取消删除'})
       })
     }
   }

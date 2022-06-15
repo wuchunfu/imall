@@ -68,7 +68,16 @@
       <el-table-column label="操作">
         <template #default="scope">
           <el-button size="small" @click="edit(scope.row)">编辑</el-button>
-          <el-button size="small" type="danger" @click="deleteMarket(scope.row)">删除</el-button>
+          <el-popconfirm title="此操作将永久删除该信息, 是否继续?"
+                         confirmButtonText="确认"
+                         cancelButtonText="取消"
+                         cancelButtonType="default"
+                         :icon="WarningFilled"
+                         @confirm="deleteMarket(scope.row)">
+            <template #reference>
+             <el-button size="small" type="danger">删除</el-button>
+            </template>
+          </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
@@ -181,14 +190,14 @@
 
 <script>
 import Container from "@/components/Container";
-import {Brush, Minus, Plus, Search, Timer} from "@element-plus/icons-vue";
-import {ElMessage, ElMessageBox} from "element-plus";
+import {Brush, Minus, Plus, Search, Timer, WarningFilled} from "@element-plus/icons-vue";
+import {ElMessage} from "element-plus";
 
 export default {
   name: "Market",
   components: {Container, Timer},
   setup() {
-    return {Search, Brush, Plus, Minus}
+    return {Search, Brush, Plus, Minus, WarningFilled}
   },
   data() {
     return {
@@ -440,13 +449,7 @@ export default {
 
     // 删除活动
     deleteMarket(row) {
-      ElMessageBox.confirm('此操作将永久删除该信息, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-          }
-      ).then(() => {
-        this.$axios.delete('/market/delete', {
+      this.$axios.delete('/market/delete', {
           params: {
             id: row.id
           }
@@ -457,9 +460,6 @@ export default {
           this.getMarketList()
         }).catch((error) => {
           console.log(error)
-        })
-      }).catch(() => {
-        ElMessage({type: 'info', message: '取消删除'})
       })
     }
   }
