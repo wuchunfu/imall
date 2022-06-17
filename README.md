@@ -48,7 +48,7 @@ go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v1
 
 **项目代码下载：**
 ```
-git clone https://github.com/zchengo/imall.git
+$ git clone https://github.com/zchengo/imall.git
 ```
 
 **部署一：Go服务端（server）**
