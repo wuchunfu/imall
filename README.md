@@ -47,7 +47,7 @@ imall
 | elasticsearch | >= 7.14.0 | https://www.elastic.co/cn/downloads/elasticsearch |
 | node | >= 14.13.1 | https://nodejs.org/en/download/ |
 
-直接下载压缩包，或使用Git克隆项目：
+直接下载压缩包，或使用 Git 克隆项目：
 ```
 $ git clone https://github.com/zchengo/imall.git
 ```
