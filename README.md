@@ -1,5 +1,7 @@
 # imall
+
 ### 简介
+
 imall 是一个本地生活服务类商城，包括微信小程序、商家后台、服务端。
 
 ### 技术选型
@@ -35,11 +37,17 @@ imall
 
 ### 本地运行
 
-**运行环境及最低版本：**
+运行环境：
 
-go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8)。
+| 环境 | 版本 | 下载地址 |
+|---|---|---|
+| go | >= 1.17.1 | https://golang.google.cn/dl/ |
+| mysql | >= 8.0.28 | https://www.mysql.com/downloads/ |
+| redis | >= 6.0.16 | https://redis.io/download/ |
+| elasticsearch | >= 7.14.0 | https://www.elastic.co/cn/downloads/elasticsearch |
+| node | >= 14.13.1 | https://nodejs.org/en/download/ |
 
-**项目代码下载：**
+项目下载：
 ```
 $ git clone https://github.com/zchengo/imall.git
 ```
