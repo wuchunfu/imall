@@ -275,7 +275,7 @@ export default {
         params: {
           id: this.query.id,
           title: this.query.title,
-          categoryId: this.query.categoryId,
+          categoryId: this.query.categoryId[1],
           status: this.query.status,
           pageNum: this.pageNum,
           pageSize: this.pageSize
