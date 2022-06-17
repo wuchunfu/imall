@@ -4,7 +4,7 @@ imall 是一个本地生活服务类商城，包括微信小程序、商家后�
 
 ### 技术选型
 
-| 前端、后端技术 | 说明 | 相关文档 |
+| 技术 | 说明 | 相关文档 |
 |---|---|---|
 | vue3 | 前端框架 | https://v3.cn.vuejs.org |
 | vue-router | 页面路由 | https://next.router.vuejs.org |
