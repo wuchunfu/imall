@@ -75,7 +75,9 @@ $ npm install
 $ npm run serve
 ```
 
-成功启动后，即可通过浏览器访问：http://localhost:8080/#/login (用户名: admin 密码: 12345)
+成功启动后，即可通过浏览器访问：http://localhost:8080/#/login
+
+账号: admin 密码: 12345
 
 **部署三：微信小程序（app）**
 
