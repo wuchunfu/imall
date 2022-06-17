@@ -42,11 +42,11 @@ imall
 
 ### 本地运行
 
-**运行及最低版本：**
+**运行环境及最低版本：**
 
 go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8)。
 
-**项目下载：**
+**项目代码下载：**
 ```
 git clone https://github.com/zchengo/imall.git
 ```
