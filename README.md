@@ -4,9 +4,7 @@ imall 是一个本地生活服务类商城，包括微信小程序、商家后�
 
 ### 技术选型
 
-前端技术：
-
-| 技术 | 说明 | 相关文档 |
+| 前端技术 | 说明 | 相关文档 |
 |---|---|---|
 | vue3 | 前端框架 | https://v3.cn.vuejs.org |
 | vue-router | 页面路由 | https://next.router.vuejs.org |
@@ -15,9 +13,7 @@ imall 是一个本地生活服务类商城，包括微信小程序、商家后�
 | element plus | 前端UI组件库 | https://element-plus.org |
 | vant weapp | 微信小程序UI组件库 | https://vant-contrib.gitee.io/vant-weapp |
 
-后端技术：
-
-| 技术 | 说明 | 相关文档 |
+| 后端技术 | 说明 | 相关文档 |
 |---|---|---|
 | gin | Web框架 | https://gin-gonic.com |
 | gorm | ORM框架 | https://gorm.io |
