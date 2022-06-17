@@ -2,16 +2,6 @@
 ### 简介
 imall 是一个本地生活服务类商城，包括微信小程序、商家后台、服务端。
 
-### 项目结构
-```
-imall
-  ├── app         // 微信小程序
-  ├── demo        // 演示资源
-  ├── server      // 服务端
-  ├── web         // 商家后台
-  ├── ...         // 其他
-```
-
 ### 技术选型
 
 前端技术：
@@ -23,6 +13,7 @@ imall
 | axios | 网络请求库 | https://axios-http.com |
 | vuex | 状态管理 | https://next.vuex.vuejs.org |
 | element plus | 前端UI组件库 | https://element-plus.org |
+| vant weapp | 微信小程序UI组件库 | https://vant-contrib.gitee.io/vant-weapp |
 
 后端技术：
 
@@ -36,14 +27,20 @@ imall
 | redis | 缓存 | https://github.com/go-redis/redis |
 | elasticsearch | 搜索引擎 | https://github.com/olivere/elastic |
 
-微信小程序技术：
+### 项目结构
+```
+imall
+  ├── app         // 微信小程序
+  ├── demo        // 演示资源
+  ├── server      // 服务端
+  ├── web         // 商家后台
+  ├── ...         // 其他
+```
+### 开发工具
 
-| 技术 | 说明 | 相关文档 |
-|---|---|---|
-| vant weapp | UI组件库 | https://vant-contrib.gitee.io/vant-weapp |
-| 微信小程序开发文档 | 官方文档 | https://developers.weixin.qq.com/miniprogram/dev/framework |
+本项目使用 Visual Studio Code、Navicat Premium、微信开发者工具等开发工具
 
-### 本地部署
+### 本地运行
 
 运行环境：
 | 环境 | 版本 |
