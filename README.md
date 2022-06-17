@@ -4,7 +4,7 @@ imall 是一个本地生活服务类商城，包括微信小程序、商家后�
 
 ### 技术选型
 
-| 前端技术 | 说明 | 相关文档 |
+| 前端、后端技术 | 说明 | 相关文档 |
 |---|---|---|
 | vue3 | 前端框架 | https://v3.cn.vuejs.org |
 | vue-router | 页面路由 | https://next.router.vuejs.org |
@@ -12,15 +12,12 @@ imall 是一个本地生活服务类商城，包括微信小程序、商家后�
 | vuex | 状态管理 | https://next.vuex.vuejs.org |
 | element plus | 前端UI组件库 | https://element-plus.org |
 | vant weapp | 微信小程序UI组件库 | https://vant-contrib.gitee.io/vant-weapp |
-
-| 后端技术 | 说明 | 相关文档 |
-|---|---|---|
 | gin | Web框架 | https://gin-gonic.com |
 | gorm | ORM框架 | https://gorm.io |
 | jwt | 用户认证 | https://github.com/golang-jwt/jwt |
 | captcha | 验证码生成器 | https://github.com/mojocn/base64Captcha |
 | viper | 配置管理 | https://github.com/spf13/viper |
-| redis | 缓存 | https://github.com/go-redis/redis |
+| redis | 数据缓存 | https://github.com/go-redis/redis |
 | elasticsearch | 搜索引擎 | https://github.com/olivere/elastic |
 
 ### 项目结构
