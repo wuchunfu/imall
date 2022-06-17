@@ -38,27 +38,22 @@ imall
 ```
 ### 开发工具
 
-本项目使用 Visual Studio Code、Navicat Premium、微信开发者工具等开发工具
+本项目使用 Visual Studio Code、Navicat Premium、微信开发者工具等开发工具。
 
 ### 本地运行
 
-运行环境：
-| 环境及最低版本 |
-|---|
-| go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8) |
+**运行及最低版本：**
 
-项目下载：
+go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8)。
+
+**项目下载：**
 ```
 git clone https://github.com/zchengo/imall.git
 ```
 
 **部署一：Go服务端（server）**
 
-修改配置文件：
-
-配置文件位于 /server/config.yaml，请按实际情况进行修改
-
-初始化并运行：
+修改配置文件：配置文件位于 /server/config.yaml，请按实际情况进行修改
 
 推荐使用 Goland 或 VSCode 打开 server 目录，在 Terminal(终端) 中，执行如下命令。
 ```
@@ -79,9 +74,7 @@ $ npm install
 $ npm run serve
 ```
 
-成功启动后，即可通过浏览器访问：http://localhost:8080/#/login  
-
-用户名: admin 密码: 12345
+成功启动后，即可通过浏览器访问：http://localhost:8080/#/login，用户名: admin 密码: 12345
 
 **部署三：微信小程序（app）**
 
