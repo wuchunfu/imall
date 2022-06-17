@@ -44,8 +44,8 @@ imall
 
 运行环境：
 | 环境及最低版本 |
-|---|---|
-| go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8)|
+|---|
+| go(v1.17.1)、mysql(v8.0.28)、redis(v6.0.16)、elasticsearch(v7.14.0)、node(v14.13.1)、npm(v6.14.8) |
 
 项目下载：
 ```
