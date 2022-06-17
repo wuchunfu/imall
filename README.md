@@ -66,7 +66,7 @@ $ go build -o server main.go (windows编译命令为 go build -o server.exe main
 $ ./server (windows运行命令为 server.exe)
 ```
 
-**部署二：Web后台管理前端（web）**
+**部署二：商家后台（web）**
 
 推荐使用 WebStorm 或 VSCode 打开 web 目录，在 Terminal(终端) 中，执行如下命令。
 ```
