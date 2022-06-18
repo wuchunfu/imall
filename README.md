@@ -97,20 +97,20 @@ $ npm install
 
 | | | |
 |---|---|---|
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w6.png) |
+| ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w2.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
+| ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w4.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w5.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/w6.png) |
 
 小程序商城：
 
 | | | | | | |
 |---|---|---|---|---|---|
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
+| ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
 
-注：以上演示图片素材来源于网络，部分图标来源[www.iconfont.cn](https://www.iconfont.cn), 图片、图标仅供学习使用。
+说明：以上演示图片素材来源于网络，部分图标来源 [www.iconfont.cn](https://www.iconfont.cn), 图片、图标仅供学习使用。
 
 ### 问题反馈
 
-在使用过程中遇到问题，你可以提交 Issues 或[知乎私信作者](https://www.zhihu.com/people/87-4-8-5)
+在使用过程中遇到问题，你可以提交 Issues 或 [知乎私信作者](https://www.zhihu.com/people/87-4-8-5)
 
 ### 许可证
 
