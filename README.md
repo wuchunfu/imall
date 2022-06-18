@@ -104,8 +104,7 @@ $ npm install
 
 | | | | | | |
 |---|---|---|---|---|---|
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) |
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
 
 ### 使用说明
 
