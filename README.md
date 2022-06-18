@@ -54,7 +54,7 @@ $ git clone https://github.com/zchengo/imall.git
 
 **部署一：Go服务端（server）**
 
-修改配置文件：配置文件位于 /server/config.yaml，请按实际情况进行修改
+修改配置文件：配置文件位于 /server/config.yaml，请按实际情况进行修改。
 
 推荐使用 Goland 或 VSCode 打开 server 目录，在 Terminal(终端) 中，执行如下命令。
 ```
