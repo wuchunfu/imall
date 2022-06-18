@@ -112,6 +112,12 @@ $ npm install
 
 在使用过程中遇到问题，你可以提交 Issues ，也可以 [知乎私信作者](https://www.zhihu.com/people/87-4-8-5) 或 [CSDN私信作者](https://blog.csdn.net/m0_47890251?spm=1000.2115.3001.5343)
 
+### 打赏作者
+
+使用微信扫描下方赞赏码，可以给作者打赏。
+
+[赞赏码](https://github.com/zchengo/imall/blob/main/demo/rw/reward.jpg)
+
 ### 许可证
 
 [MIT License](https://github.com/zchengo/imall/blob/main/LICENSE)
