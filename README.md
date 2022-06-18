@@ -97,13 +97,15 @@ $ npm install
 
 | | | |
 |---|---|---|
-| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
 | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w6.png) |
-
 
 小程序商城：
 
-![运行结果2](https://github.com/zchengo/imall/blob/main/demo/result/app.jpg)
+| | | | | | |
+|---|---|---|---|---|---|
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) |
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
 
 ### 使用说明
 
