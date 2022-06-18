@@ -106,7 +106,7 @@ $ npm install
 |---|---|---|---|---|---|
 | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![Not Found](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
 
-说明：以上演示图片素材来源于网络，部分图标来源 [www.iconfont.cn](https://www.iconfont.cn), 图片、图标仅供学习使用。
+说明：以上演示图片素材来源于网络，部分图标来源 [www.iconfont.cn](https://www.iconfont.cn) ，图片、图标仅供学习使用。
 
 ### 问题反馈
 
