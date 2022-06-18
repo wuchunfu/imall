@@ -106,8 +106,12 @@ $ npm install
 |---|---|---|---|---|---|
 | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a3.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/a6.png) |
 
-### 使用说明
+注：以上演示图片素材来源于网络，部分图标来源[www.iconfont.cn](https://www.iconfont.cn), 图片、图标仅供学习使用。
 
-本商城系统使用MIT开源许可证，完全免费，请放心使用。
+### 问题反馈
 
-图片素材来源于网络，部分图标来源www.iconfont.cn，图片、图标仅供学习使用。
+在使用过程中遇到问题，你可以提交 Issues 或[知乎私信作者](https://www.zhihu.com/people/87-4-8-5)
+
+### 许可证
+
+[MIT License](https://github.com/zchengo/imall/blob/main/LICENSE)
