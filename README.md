@@ -97,7 +97,7 @@ $ npm install
 
 | | | |
 |---|---|---|
-| <img src="https://github.com/zchengo/imall/blob/main/demo/res/w1.png" style="border-radius: 100px;" /> | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w2.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w3.png) |
 | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w4.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w5.png) | ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w6.png) |
 
 小程序商城：
