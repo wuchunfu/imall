@@ -116,7 +116,7 @@ $ npm install
 
 使用微信扫描下方赞赏码，可以给作者打赏。
 
-[赞赏码](https://github.com/zchengo/imall/blob/main/demo/rw/reward.jpg)
+![赞赏码](https://github.com/zchengo/imall/blob/main/demo/rw/reward.jpg)
 
 ### 许可证
 
