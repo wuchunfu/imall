@@ -110,7 +110,7 @@ $ npm install
 
 ### 问题反馈
 
-在使用过程中遇到问题，你可以提交 Issues 或 [知乎私信作者](https://www.zhihu.com/people/87-4-8-5)
+在使用过程中遇到问题，你可以提交 Issues ，也可以 [知乎私信作者](https://www.zhihu.com/people/87-4-8-5) 或 [CSDN私信作者](https://blog.csdn.net/m0_47890251?spm=1000.2115.3001.5343)
 
 ### 许可证
 
