@@ -95,9 +95,9 @@ $ npm install
 
 商家后台：
 
-| 相关文档 |
+| 相关文档 | | |
 |---|---|---|
-|![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png)|---|---|
+| ![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png) | zz | zz |
 
 
 小程序商城：
