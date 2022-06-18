@@ -91,11 +91,14 @@ $ npm install
 
 在微信开发者工具右上角->【详情】->【本地设置】-> 选择【使用npm模块】和【不校验合法域名，web-view（业务域名）、TLS版本...】。最后，在微信开发者工具的工具栏->【工具】->【构建npm】。
 
-**运行结果预览**
+**运行结果**
 
-商家后台管理：
+商家后台：
 
-![运行结果1](https://github.com/zchengo/imall/blob/main/demo/result/web.jpg)
+| 相关文档 |
+|---|---|---|
+|![登录页面](https://github.com/zchengo/imall/blob/main/demo/res/w1.png)|---|---|
+
 
 小程序商城：
 
