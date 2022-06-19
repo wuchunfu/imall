@@ -2,7 +2,7 @@
 
 ### 简介
 
-imall 是一个本地生活服务类商城，基于 golang、 gin、 gorm、 vue3、element plus、vant weapp 开发，包括微信小程序、商家后台、服务端。
+imall 是一个本地生活服务类商城，包括微信小程序、商家后台、服务端。
 
 ### 技术选型
 
