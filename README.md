@@ -127,4 +127,4 @@ $ npm install
 
 ### 许可证
 
-[MIT License](https://github.com/zchengo/imall/blob/main/LICENSE)
+[MIT License](https://github.com/zchengo/imall/blob/main/LICENSE) Copyright (c) 2022 zchengo
