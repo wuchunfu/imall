@@ -60,6 +60,11 @@
           </el-popconfirm>
         </template>
       </el-table-column>
+      <template #empty>
+        <div style="margin: 50px 0;">
+          <el-empty  v-if="showEmpty" description="暂时还没有订单哦" />
+        </div>
+      </template>
     </el-table>
     <div style="padding: 10px 0;">
       <el-pagination layout="total, prev, pager, next"
@@ -161,7 +166,10 @@ export default {
       // 分页
       total: 0,
       pageNum: 1,
-      pageSize: 12
+      pageSize: 12,
+
+      // 空状态
+      showEmpty: false
     }
   },
   mounted() {
@@ -195,6 +203,9 @@ export default {
       }).then((response) => {
         this.total = response.data.data.total
         this.orderList = response.data.data.list
+        if (this.orderList.length === 0) {
+          this.showEmpty = true
+        }
       }).catch((error) => {
         console.log(error)
       })

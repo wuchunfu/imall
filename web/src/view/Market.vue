@@ -80,6 +80,11 @@
           </el-popconfirm>
         </template>
       </el-table-column>
+      <template #empty>
+        <div style="margin: 50px 0;">
+          <el-empty v-if="showEmpty" description="暂时还没有活动哦" />
+        </div>
+      </template>
     </el-table>
     <div style="padding: 10px 0;">
       <el-pagination layout="total, prev, pager, next"
@@ -246,7 +251,10 @@ export default {
       goodsDialogVisible: false,
 
       // 请求认证
-      token: ''
+      token: '',
+
+      // 空状态
+      showEmpty: false
     }
   },
   mounted() {
@@ -284,6 +292,7 @@ export default {
     // 重置查询表单
     resetForm() {
       this.$refs['query'].resetFields()
+      this.getMarketList()
     },
 
     // 添加活动
@@ -325,6 +334,9 @@ export default {
       }).then((response) => {
         this.total = response.data.data.total;
         this.marketList = response.data.data.list;
+        if (this.marketList.length === 0) {
+          this.showEmpty = true
+        }
       }).catch((error) => {
         console.log(error)
       })
