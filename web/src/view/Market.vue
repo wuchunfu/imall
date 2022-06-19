@@ -24,7 +24,7 @@
       </el-form-item>
     </el-form>
     <!-- 活动列表 -->
-    <el-table :data="marketList" height="60vh" style="width: 100%">
+    <el-table :data="marketList" height="70vh" style="width: 100%">
      <el-table-column prop="bannerImage" label="活动图片" min-width="50">
         <template #default="scope">
           <el-image :src="scope.row.bannerImage" style="border-radius: 5px;"/>
@@ -81,15 +81,15 @@
         </template>
       </el-table-column>
     </el-table>
-    <br>
-    <el-pagination layout="total, prev, pager, next"
+    <div style="padding: 10px 0;">
+      <el-pagination layout="total, prev, pager, next"
                    :current-page="pageNum"
                    :page-size="pageSize"
                    :total="total"
                    @current-change="handleCurrentChange"
                    @prev-click="handleCurrentChangePrev"
-                   @next-click="handleCurrentChangeNext" background>
-    </el-pagination>
+                   @next-click="handleCurrentChangeNext" background/>
+    </div>
     <!-- 添加、编辑营销，通用对话框 -->
     <el-dialog :title="dialogTitle" v-model="marketDialogVisible" :lock-scroll="false" top="5vh" width="50%"
                @close="marketDialogVisible = false">

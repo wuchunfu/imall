@@ -20,7 +20,7 @@
       </el-form-item>
     </el-form>
     <!-- 订单列表 -->
-    <el-table :data="orderList" height="60vh" style="width: 100%">
+    <el-table :data="orderList" height="70vh" style="width: 100%">
       <el-table-column prop="id" label="订单号" width="200px"/>
       <el-table-column prop="totalPrice" label="订单金额"/>
       <el-table-column prop="goodsCount" label="商品数量">
@@ -61,14 +61,15 @@
         </template>
       </el-table-column>
     </el-table>
-    <br>
-    <el-pagination layout="total, prev, pager, next"
+    <div style="padding: 10px 0;">
+      <el-pagination layout="total, prev, pager, next"
                    :current-page="pageNum"
                    :page-size="pageSize"
                    :total="total"
                    @current-change="handleCurrentChange"
                    @prev-click="handleCurrentChangePrev"
-                   @next-click="handleCurrentChangeNext" background></el-pagination>
+                   @next-click="handleCurrentChangeNext" background/>
+    </div>
     <!-- 查看订单详情，对话框 -->
     <el-dialog :title="dialogTitle" v-model="orderDialogVisible" top="5vh" width="50%">
       <Descriptions label="订单编号">{{orderDetail.id}}</Descriptions>
@@ -160,7 +161,7 @@ export default {
       // 分页
       total: 0,
       pageNum: 1,
-      pageSize: 10
+      pageSize: 12
     }
   },
   mounted() {
@@ -174,7 +175,7 @@ export default {
     },
     handleCurrentChange(val) {
       this.pageNum = val;
-      this.getGoodsList();
+      this.getOrderList();
       console.log(`当前页: ${val}`);
     },
     handleCurrentChangeNext(val) {

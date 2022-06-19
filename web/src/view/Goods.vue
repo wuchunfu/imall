@@ -78,13 +78,15 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination layout="total, prev, pager, next"
+    <div style="padding: 10px 0;">
+      <el-pagination layout="total, prev, pager, next"
                    :current-page="pageNum"
                    :page-size="pageSize"
                    :total="total"
                    @current-change="handleCurrentChange"
                    @prev-click="handleCurrentChangePrev"
-                   @next-click="handleCurrentChangeNext" background></el-pagination>
+                   @next-click="handleCurrentChangeNext" background/>
+    </div>
     <!-- 添加、编辑商品，通用对话框 -->
     <el-dialog :title="dialogTitle" v-model="goodsDialogVisible" :lock-scroll="false" top="5vh" width="50%" @close="empty">
       <el-form :model="goods" label-width="80px">
