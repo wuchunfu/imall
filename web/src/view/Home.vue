@@ -1,12 +1,14 @@
 <template>
   <el-container class="container" direction="horizontal">
     <el-aside class="aside" width="105px">
-      <Menu/>
+      <Menu />
     </el-aside>
     <el-container direction="vertical">
-      <Header/>
+      <Header />
       <el-main class="main">
-        <router-view/>
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </el-main>
     </el-container>
   </el-container>
@@ -18,8 +20,8 @@ import Header from "@/components/Header";
 
 export default {
   name: "Home",
-  components: {Header, Menu},
-}
+  components: { Header, Menu },
+};
 </script>
 
 <style scoped>
@@ -46,13 +48,13 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #409EFF;
+  color: #409eff;
   font-size: 18px;
   padding-top: 2px;
   margin-left: 3px;
   font-weight: 600;
   letter-spacing: 2px;
-  font-family: PingFang SC,sans-serif;
+  font-family: PingFang SC, sans-serif;
 }
 
 .image {
@@ -62,5 +64,13 @@ export default {
 
 .main {
   padding: 12px;
+}
+
+.fade-enter-from,.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,.fade-leave-active {
+  transition: opacity 1s ease;
 }
 </style>
