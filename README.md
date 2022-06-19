@@ -111,9 +111,9 @@ $ npm install
 **运行结果图片加载不出来吗？**
 
 在自己的电脑中，使用 vim 命令打开并编辑 /etc/hosts ，添加如下：
-···
+```
 185.199.108.133 raw.githubusercontent.com
-···
+```
 
 ### 问题反馈
 
