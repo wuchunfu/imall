@@ -67,7 +67,7 @@ export default {
       show: true,
       loginForm: {
         username: 'admin',
-        password: '123456',
+        password: '12345',
         captchaId: '',
         captchaValue: '',
       },
