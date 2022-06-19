@@ -108,6 +108,13 @@ $ npm install
 
 说明：以上演示图片素材来源于网络，部分图标来源 [www.iconfont.cn](https://www.iconfont.cn) ，图片、图标仅供学习使用。
 
+**运行结果图片加载不出来吗？**
+
+在自己的电脑中，使用 vim 命令打开并编辑 /etc/hosts ，添加如下：
+···
+185.199.108.133 raw.githubusercontent.com
+···
+
 ### 问题反馈
 
 在使用过程中遇到问题，你可以提交 Issues ，也可以 [知乎私信作者](https://www.zhihu.com/people/87-4-8-5) 或 [CSDN私信作者](https://blog.csdn.net/m0_47890251?spm=1000.2115.3001.5343)
