@@ -62,9 +62,6 @@
           <el-switch v-model="scope.row.status" :active-value="1" :inactive-value="2" @click="changeStatus(scope.row)"/>
         </template>
       </el-table-column>
-      <!-- <el-table-column prop="goodsIds" label="已关联商品数">
-        <template #default="scope">{{scope.row.goodsIds.split(",").length}}</template>
-      </el-table-column> -->
       <el-table-column label="操作">
         <template #default="scope">
           <el-button size="small" @click="edit(scope.row)">编辑</el-button>
@@ -96,7 +93,7 @@
                    @next-click="handleCurrentChangeNext" background/>
     </div>
     <!-- 添加、编辑营销，通用对话框 -->
-    <el-dialog :title="dialogTitle" v-model="marketDialogVisible" :lock-scroll="false" top="5vh" width="50%"
+    <el-dialog :title="dialogTitle" v-model="marketDialogVisible" :lock-scroll="false" top="5vh" width="45%"
                @close="marketDialogVisible = false">
       <el-form :model="market" label-width="80px">
         <el-form-item label="活动名称">

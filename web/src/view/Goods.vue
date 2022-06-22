@@ -93,7 +93,7 @@
                    @next-click="handleCurrentChangeNext" background/>
     </div>
     <!-- 添加、编辑商品，通用对话框 -->
-    <el-dialog :title="dialogTitle" v-model="goodsDialogVisible" :lock-scroll="false" top="5vh" width="50%" @close="empty">
+    <el-dialog :title="dialogTitle" v-model="goodsDialogVisible" :lock-scroll="false" top="5vh" width="45%" @close="empty">
       <el-form :model="goods" label-width="80px">
         <el-form-item label="类目">
           <el-cascader v-model="goods.categoryId"
@@ -103,7 +103,7 @@
                        @focus="getCategoryOption" placeholder="请选择" clearable/>
         </el-form-item>
         <el-form-item label="标题">
-          <el-input v-model="goods.title" type="text" maxlength="30" show-word-limit/>
+          <el-input v-model="goods.title" style="width: 90%;" type="text" maxlength="30" show-word-limit/>
         </el-form-item>
         <el-form-item label="名称">
           <el-input v-model="goods.name" style="width: 50%;" type="text" maxlength="10" show-word-limit/>
@@ -134,7 +134,7 @@
         </el-form-item>
         <el-form-item label="备注">
           <el-input v-model="goods.remark"
-                    style="width: 80%;"
+                    style="width: 90%;"
                     type="textarea"
                     maxlength="100"
                     :autosize="{ minRows: 2}" show-word-limit/>
