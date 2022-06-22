@@ -94,17 +94,17 @@
     </div>
     <!-- 添加、编辑营销，通用对话框 -->
     <el-dialog :title="dialogTitle" v-model="marketDialogVisible" :lock-scroll="false" top="5vh" width="45%"
-               @close="marketDialogVisible = false">
+               @close="cancel">
       <el-form :model="market" label-width="80px">
-        <el-form-item label="活动名称">
+        <el-form-item label="活动名称" :required="true">
           <el-input v-model="market.name" type="text" maxlength="20" show-word-limit/>
         </el-form-item>
-        <el-form-item label="活动类型">
+        <el-form-item label="活动类型" :required="true">
           <el-select v-model.number="market.type" placeholder="请选择" clearable>
             <el-option v-for="item in typeOption" :key="item.value" :label="item.label" :value="item.value"/>
           </el-select>
         </el-form-item>
-        <el-form-item label="活动图片">
+        <el-form-item label="活动图片" :required="true">
           <el-upload
               action="http://localhost:8000/web/upload"
               :headers="{'token': token}"
@@ -118,13 +118,13 @@
             <div class="goods_image_upload_icon">+</div>
           </el-upload>
         </el-form-item>
-        <el-form-item label="开始时间">
+        <el-form-item label="开始时间" :required="true">
           <el-date-picker v-model="market.beginTime" value-format="YYYY-MM-DD HH:mm:ss" type="datetime" placeholder="请选择开始时间"/>
         </el-form-item>
-        <el-form-item label="结束时间">
+        <el-form-item label="结束时间" :required="true">
           <el-date-picker v-model="market.overTime" value-format="YYYY-MM-DD HH:mm:ss" type="datetime" placeholder="请选择结束时间"/>
         </el-form-item>
-        <el-form-item label="关联商品">
+        <el-form-item label="关联商品" :required="true">
           <el-button type="primary" :icon="Plus" @click="addGoods"/>
         </el-form-item>
         <el-form-item label="活动商品">
@@ -154,7 +154,8 @@
       </el-form>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="marketDialogVisible = false">取消</el-button>
+          <el-button @click="cancel">取消</el-button>
+          <el-button @click="empty">重置</el-button>
           <el-button type="primary" @click="confirmMarket">确定</el-button>
         </span>
       </template>
@@ -411,49 +412,54 @@ export default {
 
     // 确认添加或编辑活动
     confirmMarket() {
-      if (this.operateType === 'add') {
-        if (this.market.goodsIds === "") {
-          ElMessage({message: '请至少关联一个活动商品', type: 'warning'})
-          return
+      let valid = this.marketFormValidator();
+      if (valid) {
+        if (this.operateType === 'add') {
+          if (this.market.goodsIds === "") {
+            ElMessage({message: '请至少关联一个活动商品', type: 'warning'})
+            return
+          }
+          // 添加活动
+          this.$axios.post('/market/create', {
+            name: this.market.name,
+            type: this.market.type,
+            bannerImage: this.market.bannerImage,
+            beginTime: this.market.beginTime,
+            overTime: this.market.overTime,
+            goodsIds: this.market.goodsIds
+          }).then((response) => {
+            if (response.data.code === 200) {
+              ElMessage({message: response.data.message, type: 'success'})
+            }
+            this.getMarketList()
+          }).catch((error) => {
+            console.log(error)
+          })
         }
-        // 添加活动
-        this.$axios.post('/market/create', {
-          name: this.market.name,
-          type: this.market.type,
-          bannerImage: this.market.bannerImage,
-          beginTime: this.market.beginTime,
-          overTime: this.market.overTime,
-          goodsIds: this.market.goodsIds
-        }).then((response) => {
-          if (response.data.code === 200) {
-            ElMessage({message: response.data.message, type: 'success'})
-          }
-          this.getMarketList()
-        }).catch((error) => {
-          console.log(error)
-        })
+        if (this.operateType === 'edit') {
+          // 编辑活动
+          this.$axios.put('/market/update', {
+            id: this.market.id,
+            name: this.market.name,
+            type: this.market.type,
+            bannerImage: this.market.bannerImage,
+            beginTime: this.market.beginTime,
+            overTime: this.market.overTime,
+            goodsIds: this.market.goodsIds,
+            status: this.market.status
+          }).then((response) => {
+            if (response.data.code === 200) {
+              ElMessage({message: response.data.message, type: 'success'})
+            }
+            this.getMarketList()
+          }).catch((error) => {
+            console.log(error)
+          })
+        }
+        this.marketDialogVisible = false
+      } else {
+        console.log("error submit!!");
       }
-      if (this.operateType === 'edit') {
-        // 编辑活动
-        this.$axios.put('/market/update', {
-          id: this.market.id,
-          name: this.market.name,
-          type: this.market.type,
-          bannerImage: this.market.bannerImage,
-          beginTime: this.market.beginTime,
-          overTime: this.market.overTime,
-          goodsIds: this.market.goodsIds,
-          status: this.market.status
-        }).then((response) => {
-          if (response.data.code === 200) {
-            ElMessage({message: response.data.message, type: 'success'})
-          }
-          this.getMarketList()
-        }).catch((error) => {
-          console.log(error)
-        })
-      }
-      this.marketDialogVisible = false
     },
 
     // 删除活动
@@ -470,7 +476,53 @@ export default {
         }).catch((error) => {
           console.log(error)
       })
-    }
+    },
+
+    // 表单校验
+    marketFormValidator() {
+      if (this.market.name === '') {
+        ElMessage({ message: '名称不能为空', type: 'warning' });
+        return false;
+      }
+      if (this.market.type === '') {
+        ElMessage({ message: '类型不能为空', type: 'warning' });
+        return false;
+      }
+      if (this.market.bannerImage === '') {
+        ElMessage({ message: '图片不能为空', type: 'warning' });
+        return false;
+      }
+      if (this.market.beginTime === '') {
+        ElMessage({ message: "请设置开始时间", type: 'warning' });
+        return false;
+      }
+      if (this.market.overTime === "") {
+        ElMessage({ message: "请设置结束时间", type: 'warning' });
+        return false;
+      }
+      if (this.market.goodsIds === "") {
+        ElMessage({ message: "至少关联一个商品", type: 'warning' });
+        return false;
+      }
+      return true;
+    },
+
+    // 取消
+    cancel() {
+      this.empty()
+      this.marketDialogVisible = false
+    },
+
+    // 清空数据
+    empty() {
+      this.market.bannerImage = '',
+      this.market.name = '',
+      this.market.type = '',
+      this.market.beginTime = '',
+      this.market.overTime = '',
+      this.market.goodsIds = '',
+      this.pictureList = []
+    },
   }
 }
 </script>

@@ -93,32 +93,32 @@
                    @next-click="handleCurrentChangeNext" background/>
     </div>
     <!-- 添加、编辑商品，通用对话框 -->
-    <el-dialog :title="dialogTitle" v-model="goodsDialogVisible" :lock-scroll="false" top="5vh" width="45%" @close="empty">
+    <el-dialog :title="dialogTitle" v-model="goodsDialogVisible" :lock-scroll="false" top="5vh" width="45%" @close="cancel">
       <el-form :model="goods" label-width="80px">
-        <el-form-item label="类目">
+        <el-form-item label="类目" :required="true">
           <el-cascader v-model="goods.categoryId"
                        :options="categoryOption"
                        @change="changeCategory"
                        change-on-select
                        @focus="getCategoryOption" placeholder="请选择" clearable/>
         </el-form-item>
-        <el-form-item label="标题">
+        <el-form-item label="标题" :required="true">
           <el-input v-model="goods.title" style="width: 90%;" type="text" maxlength="30" show-word-limit/>
         </el-form-item>
-        <el-form-item label="名称">
+        <el-form-item label="名称" :required="true">
           <el-input v-model="goods.name" style="width: 50%;" type="text" maxlength="10" show-word-limit/>
         </el-form-item>
-        <el-form-item label="价格">
+        <el-form-item label="价格" :required="true">
           <el-input v-model.number="goods.price" style="width: 50%;">
             <template #append>元</template>
           </el-input>
         </el-form-item>
-        <el-form-item label="数量">
+        <el-form-item label="数量" :required="true">
           <el-input v-model.number="goods.quantity" style="width: 50%;">
             <template #append>件</template>
           </el-input>
         </el-form-item>
-        <el-form-item label="图片">
+        <el-form-item label="图片" :required="true">
           <el-upload
               action="http://localhost:8000/web/upload"
               :headers="{'token': token}"
@@ -142,7 +142,8 @@
       </el-form>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="empty">取消</el-button>
+          <el-button @click="cancel">取消</el-button>
+          <el-button @click="empty">重置</el-button>
           <el-button type="primary" @click="confirmGoods">确定</el-button>
         </span>
       </template>
@@ -319,37 +320,42 @@ export default {
 
     // 确认添加或编辑商品
     confirmGoods() {
-      if (this.operateType === 'add') {
-        // 添加商品
-        this.$axios.post('/goods/create', {
-          categoryId: parseInt(this.goods.categoryId),
-          title: this.goods.title,
-          name: this.goods.name,
-          price: parseInt(this.goods.price),
-          quantity: parseInt(this.goods.quantity),
-          imageUrl: this.goods.imageUrl,
-          remark: this.goods.remark
-        }).then((response) => {
-          if (response.data.code === 200) {
-            ElMessage({message: response.data.message, type: 'success'})
-          }
-          this.getGoodsList()
-        }).catch((error) => {
-          console.log(error)
-        })
+      let valid = this.goodsFormValidator()
+      if (valid) {
+        if (this.operateType === 'add') {
+          // 添加商品
+          this.$axios.post('/goods/create', {
+            categoryId: parseInt(this.goods.categoryId),
+            title: this.goods.title,
+            name: this.goods.name,
+            price: parseInt(this.goods.price),
+            quantity: parseInt(this.goods.quantity),
+            imageUrl: this.goods.imageUrl,
+            remark: this.goods.remark
+          }).then((response) => {
+            if (response.data.code === 200) {
+              ElMessage({message: response.data.message, type: 'success'})
+            }
+            this.getGoodsList()
+          }).catch((error) => {
+            console.log(error)
+          })
+        }
+        if (this.operateType === 'edit') {
+          // 编辑商品
+          this.$axios.put('/goods/update', this.goods).then((response) => {
+            if (response.data.code === 200) {
+              ElMessage({message: response.data.message, type: 'success'})
+            }
+            this.getGoodsList()
+          }).catch((error) => {
+            console.log(error)
+          })
+        }
+        this.goodsDialogVisible = false
+      } else {
+        console.log('error submit!')
       }
-      if (this.operateType === 'edit') {
-        // 编辑商品
-        this.$axios.put('/goods/update', this.goods).then((response) => {
-          if (response.data.code === 200) {
-            ElMessage({message: response.data.message, type: 'success'})
-          }
-          this.getGoodsList()
-        }).catch((error) => {
-          console.log(error)
-        })
-      }
-      this.goodsDialogVisible = false
     },
 
     // 删除商品
@@ -368,10 +374,45 @@ export default {
       })
     },
 
+    // 表单校验
+    goodsFormValidator() {
+      if (this.goods.categoryId === ''){
+        ElMessage({message: '请选择一个类目', type: 'warning'})
+        return false
+      }
+      if (this.goods.title === ''){
+        ElMessage({message: '标题不能为空', type: 'warning'})
+        return false
+      }
+      if (this.goods.name === ''){
+        ElMessage({message: '名称不能为空', type: 'warning'})
+        return false
+      }
+      if (this.goods.price === ''){
+        ElMessage({message: '价格不能为空', type: 'warning'})
+        return false
+      }
+      if (this.goods.quantity === ''){
+        ElMessage({message: '数量不能为空', type: 'warning'})
+        return false
+      }
+      if (this.goods.imageUrl === ''){
+        ElMessage({message: '图片不能为空', type: 'warning'})
+        return false
+      }
+      return true
+    },
+
     // 重置查询表单
     resetForm() {
       this.$refs['query'].resetFields()
       this.getGoodsList()
+    },
+
+    // 取消
+    cancel() {
+      this.empty()
+      this.goodsDialogVisible = false
     },
 
     // 清空数据
@@ -387,7 +428,6 @@ export default {
       this.goods.status = ''
       this.operateType = ''
       this.pictureList = []
-      this.goodsDialogVisible = false
     }
   }
 }
